@@ -589,14 +589,26 @@
       else { partnerField.classList.remove('open'); }
     });
   });
-
-  document.getElementById('rsvpForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('thanks').classList.add('show');
-    // ЗАМЕНИТЬ: здесь можно подключить Formspree/Google Forms,
-    // чтобы ответы реально сохранялись — см. пояснение в чате.
-  });
+  document.getElementById('rsvpForm').addEventListener('submit', function(e){e.preventDefault();
+  const formData = new FormData(this);
+  
+  // Отправляем данные на шлюз Web3Forms
+  fetch('https://web3forms.com', {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => {
+    if (response.ok) {
+      // Твоя оригинальная логика успешного скрытия формы и показа "Спасибо"
+      this.style.display = 'none';
+      document.getElementById('thanks').classList.add('show');
+    } else {
+      alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+    }
+  })
+  .catch(error => {
+    alert('Ошибка сети. Проверьте подключение к интернету.');                                                                           
+});
 </script>
 
 </body>
