@@ -218,22 +218,28 @@
  font-size:1.4rem;
  padding:0.5rem 0;
  position:relative;
+ display:flex;
+ align-items:center;
+ justify-content:center;
  }
  .cal-grid .day.marked{
  color:var(--ochre);
  font-weight:600;
  }
  .cal-grid .day.marked::after{
- content:'♡';
+ content:'\2661';
  position:absolute;
- inset:0;
+ width: 44px;
+ height: 44px;
  display:flex;
  align-items:center;
  justify-content:center;
- font-size:2.2rem;
+ font-size:2.8rem;
  color:transparent;
- -webkit-text-stroke:1px var(--ochre);
- opacity:0.9;
+ -webkit-text-stroke:1.5px var(--ochre);
+ opacity:0.95;
+ pointer-events: none;
+ z-index: 1;
  }
  .countdown{
  margin-top:2.8rem;
@@ -384,7 +390,7 @@
  transition:max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
  }
  #partner-field.open{
- max-height:140px;
+ max-height:120px;
  opacity:1;
  margin-top: 0.5rem;
  }
@@ -439,11 +445,7 @@
 <div class="tile-row" aria-hidden="true">
 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 </div>
-
-<section class="welcome reveal">
- <div class="wrap">
- <div class="eyebrow" style="text-align:center;">Дорогие гости</div>
-<p class="display">Самые важные моменты жизни хочется разделить с самыми близкими людьми.</p>
+p class="display">Самые важные моменты жизни хочется разделить с самыми близкими людьми.</p>
  <p>30 августа мы с Лизой станем семьёй — и будем невероятно счастливы, если этот день вы проведёте рядом с нами. Ваше присутствие для нас значит больше, чем любой подарок.</p>
  </div>
 </section>
@@ -605,7 +607,7 @@
  });
  });
 
- // Безопасная отправка анкеты через JSON
+ // Отправка JSON данных на шлюз Web3Forms
  document.getElementById('rsvpForm').addEventListener('submit', function(e){
  e.preventDefault();
  
