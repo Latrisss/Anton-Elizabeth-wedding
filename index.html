@@ -278,6 +278,9 @@
     font-size:0.75rem;
     border-radius:2px;
     transition:background 0.3s ease, transform 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
   }
   .btn:hover{ background:#A5895A; transform:translateY(-2px); }
 
@@ -315,12 +318,31 @@
     color:var(--ink);
   }
   .rsvp .eyebrow{ color:var(--terracotta); text-align:center; display:block; }
-  .rsvp h2{ text-align:center; }
+  .rsvp h2{ text-align:center; font-size:2.2rem; color:var(--cobalt-deep); margin-bottom: 0.5rem;}
   form{
     margin-top:2rem;
     display:flex;
     flex-direction:column;
-    gap:1.1rem;
+    gap:1.5rem;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-top: 0.5rem;
+    text-align: left;
+  }
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
   }
   label{
     font-size:0.75rem;
@@ -342,266 +364,40 @@
     outline:none;
     transition:border-color 0.3s ease;
   }
-  input[type=text]:focus{ border-color:var(--terracotta); }
-  input[type=text]::placeholder{ color:rgba(58,54,46,0.35); }
-
-  .radio-group{ display:flex; gap:1.5rem; flex-wrap:wrap; }
-  .radio-opt{
-    flex:1;
-    min-width:180px;
-    padding:0.9rem 1rem;
-    border:1px solid rgba(58,54,46,0.25);
-    border-radius:4px;
-    cursor:pointer;
-    text-align:center;
-    transition:all 0.25s ease;
-    font-size:0.9rem;
-  }
-  .radio-opt input{ display:none; }
-  .radio-opt.selected{
-    background:var(--ochre);
-    color:var(--cobalt-deep);
-    border-color:var(--ochre);
-    font-weight:500;
-  }
-  #partner-field{
-    max-height:0;
-    overflow:hidden;
-    opacity:0;
-    transition:max-height 0.4s ease, opacity 0.4s ease, margin 0.4s ease;
-  }
-  #partner-field.open{
-    max-height:120px;
-    opacity:1;
-  }
-  .submit-btn{
-    margin-top:0.6rem;
-    padding:1rem;
-    background:var(--terracotta);
-    color:var(--plaster);
-    border:none;
-    border-radius:2px;
-    text-transform:uppercase;
-    letter-spacing:0.15em;
-    font-size:0.8rem;
-    cursor:pointer;
-    transition:background 0.3s ease;
-  }
-  .submit-btn:hover{ background:#8F7658; }
-  .thanks{
-    display:none;
-    text-align:center;
-    padding:2rem;
-    border:1px solid rgba(213,164,25,0.5);
-    border-radius:4px;
-    margin-top:1.5rem;
-  }
-  .thanks.show{ display:block; animation:fadeUp 0.6s ease; }
-
-  footer{
-    text-align:center;
-    padding:2.5rem 1.5rem;
-    font-size:0.75rem;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
-    color:var(--cobalt);
-    opacity:0.6;
-  }
+  input[type=text]:focus{ border-color: var(--cobalt); }
 </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="eyebrow">Приглашаем на свадьбу</div>
-  <h1>Антон<span class="amp">&</span>Елизавета</h1>
-  <div class="date-line">30 августа 2026</div>
-  <div class="heart">
-    <svg width="34" height="30" viewBox="0 0 34 30" fill="none">
-      <path d="M17 29C17 29 1 19.5 1 9.5C1 4.5 5 1 9.5 1C13 1 15.5 3 17 6C18.5 3 21 1 24.5 1C29 1 33 4.5 33 9.5C33 19.5 17 29 17 29Z" stroke="#B79A5D" stroke-width="1.4"/>
-    </svg>
-  </div>
-  <div class="scroll-cue"></div>
-</section>
+  <!-- HERO SECTION (Пример начала структуры страницы) -->
+  <section class="hero">
+    <div class="eyebrow">Приглашение на свадьбу</div>
+    <h1>Антон <span class="amp">&</span> Елизавета</h1>
+    <div class="date-line">30 августа 2026</div>
+    <div class="heart">♡</div>
+    <div class="scroll-cue"></div>
+  </section>
 
-<div class="tile-row" aria-hidden="true">
-  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-</div>
+  <!-- СЕКЦИЯ RSVP С ФОРМОЙ -->
+  <section class="rsvp">
+    <div class="wrap">
+      <div class="eyebrow">R.S.V.P</div>
+      <h2>Подтвердите присутствие</h2>
+      
+      <form action="https://web3forms.com" method="POST">
+        <!-- ВАЖНО: Замените ПОДПИСЬ_НИЖЕ на ваш реальный ключ из Web3Forms Dashboard -->
+        <input type="hidden" name="access_key" value="СЮДА_ВСТАВЬТЕ_ВАШ_КЛЮЧ">
+        <input type="hidden" name="subject" value="Новый ответ на приглашение (Свадьба)">
+        <input type="hidden" name="from_name" value="Свадебный Сайт">
 
-<section class="welcome reveal">
-  <div class="wrap">
-    <div class="eyebrow" style="text-align:center;">Дорогие гости</div>
-    <p class="display">Самые важные моменты жизни хочется разделить с самыми близкими людьми.</p>
-    <p>30 августа мы с Лизой станем семьёй — и будем невероятно счастливы, если этот день вы проведёте рядом с нами. Ваше присутствие для нас значит больше, чем любой подарок.</p>
-  </div>
-</section>
-
-<section class="calendar reveal">
-  <div class="wrap">
-    <div class="eyebrow">Сохраните дату</div>
-    <div class="cal-box">
-      <div class="cal-head">Август 2026</div>
-      <div class="cal-grid" id="calGrid"></div>
-    </div>
-    <div class="countdown" id="countdown">
-      <div><div class="num" id="cd-days">--</div><div class="lbl">дней</div></div>
-      <div><div class="num" id="cd-hours">--</div><div class="lbl">часов</div></div>
-      <div><div class="num" id="cd-min">--</div><div class="lbl">минут</div></div>
-      <div><div class="num" id="cd-sec">--</div><div class="lbl">секунд</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="venue reveal">
-  <div class="wrap">
-    <div class="eyebrow">Место проведения</div>
-    <div class="venue-card">
-      <h3>Palermo</h3>
-      <p>Точный адрес и детали проезда — по ссылке ниже</p>
-      <a class="btn" href="#" target="_blank" rel="noopener">Открыть карту →</a>
-    </div>
-  </div>
-</section>
-
-<section class="timeline reveal">
-  <div class="wrap">
-    <div class="eyebrow">План дня</div>
-    <div class="timeline-note">Расписание дня уточняется — появится здесь ближе к дате</div>
-  </div>
-</section>
-
-<section class="dress reveal">
-  <div class="wrap">
-    <div class="eyebrow">Дресс-код</div>
-    <h2 style="margin-top:0.6rem; color:var(--cobalt-deep);">Комфорт превыше всего</h2>
-    <p style="margin-top:0.8rem; opacity:0.75; max-width:520px; margin-left:auto; margin-right:auto;">Наденьте то, в чём чувствуете себя свободно. Если хочется ориентир — вот палитра дня:</p>
-    <div class="palette">
-      <div class="swatch" style="background:#FBF8F2; border:1px solid #ddd;"></div>
-      <div class="swatch" style="background:#B79A5D;"></div>
-      <div class="swatch" style="background:#8C9A7B;"></div>
-      <div class="swatch" style="background:#A98F72;"></div>
-      <div class="swatch" style="background:#4A4636;"></div>
-    </div>
-  </div>
-</section>
-
-<section class="rsvp reveal">
-  <div class="wrap">
-    <div class="eyebrow">Анкета гостя</div>
-    <h2>Будете с нами?</h2>
-    <form id="rsvpForm">
-      <div>
-        <label for="fullname">Имя и фамилия</label>
-        <input type="text" id="fullname" placeholder="Иван Иванов" required>
-      </div>
-
-      <div>
-        <label>Будете ли вы на свадьбе</label>
-        <div class="radio-group">
-          <label class="radio-opt" id="opt-yes">
-            <input type="radio" name="attend" value="yes">
-            Да, с удовольствием
-          </label>
-          <label class="radio-opt" id="opt-no">
-            <input type="radio" name="attend" value="no">
-            Нет, не смогу
-          </label>
+        <!-- Поле: Имя гостя -->
+        <div class="form-group">
+          <label for="guest-name">Ваше имя и фамилия</label>
+          <input type="text" id="guest-name" name="Имя гостя" placeholder="Иван Иванов" required>
         </div>
-      </div>
 
-      <div id="partner-field">
-        <label for="partner">Имя и фамилия пары</label>
-        <input type="text" id="partner" placeholder="Если будете с парой">
-      </div>
-
-      <button type="submit" class="submit-btn">Отправить ответ</button>
-    </form>
-    <div class="thanks" id="thanks">
-      <div class="display" style="font-size:1.6rem; color:var(--ochre);">Спасибо!</div>
-      <p style="margin-top:0.6rem; opacity:0.85;">Ваш ответ получен. До встречи 30 августа!</p>
-    </div>
-  </div>
-</section>
-
-<div class="tile-row" aria-hidden="true">
-  <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-</div>
-
-<footer>Антон &amp; Елизавета · 30.08.2026</footer>
-
-<script>
-  // Reveal on scroll
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
-  }, {threshold:0.15});
-  reveals.forEach(el=>io.observe(el));
-
-  // Calendar grid for August 2026 (Sat = Aug 1, 2026)
-  const dow = ['Пн','Вт','Ср','Чт','Пт','Сб','Вс'];
-  const grid = document.getElementById('calGrid');
-  dow.forEach(d=>{
-    const el = document.createElement('div');
-    el.className = 'dow'; el.textContent = d;
-    grid.appendChild(el);
-  });
-  const firstWeekday = 5; // Aug 1 2026 is Saturday -> index 5 (Mon=0)
-  for(let i=0;i<firstWeekday;i++){
-    const blank = document.createElement('div');
-    grid.appendChild(blank);
-  }
-  for(let day=1; day<=31; day++){
-    const el = document.createElement('div');
-    el.className = 'day' + (day===30 ? ' marked' : '');
-    el.textContent = day;
-    grid.appendChild(el);
-  }
-
-  // Countdown
-  const target = new Date('2026-08-30T14:00:00');
-  function tick(){
-    const now = new Date();
-    let diff = target - now;
-    if(diff < 0) diff = 0;
-    const d = Math.floor(diff/(1000*60*60*24));
-    const h = Math.floor(diff/(1000*60*60)%24);
-    const m = Math.floor(diff/(1000*60)%60);
-    const s = Math.floor(diff/1000%60);
-    document.getElementById('cd-days').textContent = d;
-    document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-    document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
-    document.getElementById('cd-sec').textContent = String(s).padStart(2,'0');
-  }
-  tick(); setInterval(tick, 1000);
-
-  // RSVP interactions
-  const optYes = document.getElementById('opt-yes');
-  const optNo = document.getElementById('opt-no');
-  const partnerField = document.getElementById('partner-field');
-  [optYes, optNo].forEach(opt=>{
-    opt.addEventListener('click', ()=>{
-      optYes.classList.remove('selected');
-      optNo.classList.remove('selected');
-      opt.classList.add('selected');
-      if(opt === optYes){ partnerField.classList.add('open'); }
-      else { partnerField.classList.remove('open'); }
-    });
-  });
-
-  document.getElementById('rsvpForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('thanks').classList.add('show');
-    // ЗАМЕНИТЬ: здесь можно подключить Formspree/Google Forms,
-    // чтобы ответы реально сохранялись — см. пояснение в чате.
-  });
-</script>
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit Form</button>
-</form>
-
-</body>
-</html>
+        <!-- Поле: Присутствие -->
+        <div class="form-group">
+          <label>Сможете ли вы присутствовать?</label>
+          <div class="radio-group">
+            <label class="radio-option">
