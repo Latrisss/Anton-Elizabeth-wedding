@@ -488,7 +488,8 @@
   <div class="wrap">
     <div class="eyebrow">Анкета гостя</div>
     <h2>Будете с нами?</h2>
-    <form id="rsvpForm">
+    <form id="rsvpForm" method="POST">
+      <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88>
       <div>
         <label for="fullname">Имя и фамилия</label>
         <input type="text" id="fullname" placeholder="Иван Иванов" required>
@@ -586,15 +587,31 @@
       else { partnerField.classList.remove('open'); }
     });
   });
+ document.getElementById('rsvpForm').addEventListener('submit', function(e){e.preventDefault();
+    
+    // Собираем все данные из полей формы
+    const formData = new FormData(this);
 
-  document.getElementById('rsvpForm').addEventListener('submit', function(e){
-    e.preventDefault();
-    this.style.display = 'none';
-    document.getElementById('thanks').classList.add('show');
-    // ЗАМЕНИТЬ: здесь можно подключить Formspree/Google Forms,
-    // чтобы ответы реально сохранялись — см. пояснение в чате.
+    // Отправляем их в фоновом режиме на сервер Web3Forms
+    fetch('https://web3forms.com', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => {
+        if (response.ok) {
+            // Если всё ушло, прячем форму и показываем твой блок "Спасибо"
+            this.style.display = 'none';
+            document.getElementById('thanks').classList.add('show');
+        } else {
+            alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+        }
+    })
+    .catch(error => {
+        alert('Ошибка сети. Проверьте подключение к интернету.');
+    });
   });
 </script>
 
 </body>
+
 </html>
