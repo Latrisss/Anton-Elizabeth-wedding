@@ -305,46 +305,46 @@
  color:var(--ink);
  }
  .rsvp .eyebrow{ color:var(--terracotta); text-align:center; display:block; }
- .rsvp h2{ text-align:center; font-size:2.2rem; color:var(--cobalt-deep); margin: 0.6rem 0 1.5rem; }
+ .rsvp h2{ text-align:center; }
  form{
  margin-top:2rem;
  display:flex;
  flex-direction:column;
- gap:1.4rem;
+ gap:1.1rem;
  }
  label{
- font-size:0.85rem;
+ font-size:0.75rem;
  text-transform:uppercase;
  letter-spacing:0.15em;
- opacity:0.8;
- margin-bottom:0.45rem;
+ opacity:0.7;
+ margin-bottom:0.35rem;
  display:block;
  }
  input[type=text]{
  width:100%;
- padding:0.9rem 0.2rem;
+ padding:0.8rem 0.2rem;
  background:transparent;
  border:none;
  border-bottom:1px solid rgba(58,54,46,0.3);
  color:var(--ink);
  font-family:'Jost',sans-serif;
- font-size:1.15rem;
+ font-size:1rem;
  outline:none;
  transition:border-color 0.3s ease;
  }
  input[type=text]:focus{ border-color:var(--terracotta); }
  input[type=text]::placeholder{ color:rgba(58,54,46,0.35); }
- .radio-group{ display:flex; gap:1.5rem; flex-wrap:wrap; margin-top: 0.4rem; }
+ .radio-group{ display:flex; gap:1.5rem; flex-wrap:wrap; }
  .radio-opt{
  flex:1;
  min-width:180px;
- padding:1rem;
+ padding:0.9rem 1rem;
  border:1px solid rgba(58,54,46,0.25);
  border-radius:4px;
  cursor:pointer;
  text-align:center;
  transition:all 0.25s ease;
- font-size:1.05rem;
+ font-size:0.9rem;
  }
  .radio-opt input{ display:none; }
  .radio-opt.selected{
@@ -362,31 +362,28 @@
  #partner-field.open{
  max-height:120px;
  opacity:1;
- margin-top: 0.5rem;
  }
  .submit-btn{
- margin-top:1rem;
- padding:1.1rem;
+ margin-top:0.6rem;
+ padding:1rem;
  background:var(--terracotta);
  color:var(--plaster);
  border:none;
  border-radius:2px;
  text-transform:uppercase;
  letter-spacing:0.15em;
- font-size:0.9rem;
+ font-size:0.8rem;
  cursor:pointer;
  transition:background 0.3s ease;
- width: 100%;
  }
  .submit-btn:hover{ background:#8F7658; }
  .thanks{
  display:none;
  text-align:center;
- padding:2.5rem;
+ padding:2rem;
  border:1px solid rgba(213,164,25,0.5);
  border-radius:4px;
  margin-top:1.5rem;
- background: rgba(255,255,255,0.2);
  }
  .thanks.show{ display:block; animation:fadeUp 0.6s ease; }
  footer{
@@ -425,3 +422,8 @@
 <section class="calendar reveal">
  <div class="wrap">
  <div class="eyebrow">Сохраните дату</div>
+ <div class="cal-box">
+ <div class="cal-head">Август 2026</div>
+ <div class="cal-grid" id="calGrid"></div>
+ </div>
+ <div class="countdown" id="countdown">
