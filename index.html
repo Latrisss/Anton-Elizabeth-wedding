@@ -587,13 +587,43 @@
     });
   });
 
-  document.getElementById('rsvpForm').addEventListener('submit', function(e){
-    e.preventDefault();
+  document.getElementById('rsvpForm').addEventListener('submit', 
+    function(e){e.preventDefault();
     this.style.display = 'none';
     document.getElementById('thanks').classList.add('show');
     // ЗАМЕНИТЬ: здесь можно подключить Formspree/Google Forms,
     // чтобы ответы реально сохранялись — см. пояснение в чате.
   });
+  <form action="https://web3forms.com" method="POST">
+        <!-- ТВОЙ КЛЮЧ ИЗ WEB3FORMS -->
+        <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
+        <input type="hidden" name="subject" value="Новый ответ на приглашение (Свадьба)">
+
+        <div>
+          <label for="guest-name">Ваше имя и фамилия</label>
+          <input type="text" id="guest-name" name="name" placeholder="Иван Иванов" required>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: left;">
+          <label>Сможете ли вы присутствовать?</label>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem;">
+            <label style="cursor: pointer;"><input type="radio" name="attendance" value="Приду" checked> Я приду с удовольствием</label>
+            <label style="cursor: pointer;"><input type="radio" name="attendance" value="Не приду"> К сожалению, не смогу</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <label for="drinks">Пожелания по напиткам или аллергии</label>
+          <input type="text" id="drinks" name="message" placeholder="Вино сухое / Виски">
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="btn">Отправить ответ</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
 </script>
 </body>
 </html>
