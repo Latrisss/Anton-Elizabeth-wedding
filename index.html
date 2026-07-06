@@ -488,32 +488,35 @@
   <div class="wrap">
     <div class="eyebrow">Анкета гостя</div>
     <h2>Будете с нами?</h2>
-    <form id="rsvpForm">
-      <div>
-        <label for="fullname">Имя и фамилия</label>
-        <input type="text" id="fullname" placeholder="Иван Иванов" required>
-      </div>
+    <form id="rsvpForm" method="POST">
+    <!-- Настройки для Web3Forms -->
+    <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
+    <input type="hidden" name="subject" value="Новый ответ на приглашение">
 
-      <div>
-        <label>Будете ли вы на свадьбе</label>
-        <div class="radio-group">
-          <label class="radio-opt" id="opt-yes">
-            <input type="radio" name="attend" value="yes">
-            Да, с удовольствием
-          </label>
-          <label class="radio-opt" id="opt-no">
-            <input type="radio" name="attend" value="no">
-            Нет, не смогу
-          </label>
-        </div>
-      </div>
-
-      <div id="partner-field">
-        <label for="partner">Имя и фамилия пары</label>
-        <input type="text" id="partner" placeholder="Если будете с парой">
-      </div>
-
-      <button type="submit" class="submit-btn">Отправить ответ</button>
+    <div>
+      <label for="fullname">Имя и фамилия</label>
+      <!-- Добавлен name="Имя гостя" -->
+      <input type="text" id="fullname" name="Имя гостя" placeholder="Иван Иванов" required>
+    </div>
+    <div>
+    <label>Будете ли вы на свадьбе</label>
+    <div class="radio-group">
+      <label class="radio-opt" id="opt-yes">
+        <input type="radio" name="Присутствие" value="Да, с удовольствием" checked>
+        Да, с удовольствием
+      </label>
+      <label class="radio-opt" id="opt-no">
+        <input type="radio" name="Присутствие" value="Нет, не смогу">
+        Нет, не смогу
+      </label>
+    </div>
+  </div>
+  <div id="partner-field">
+    <label for="partner">Имя и фамилия пары</label>
+    <!-- Добавлен name="Имя пары" -->
+    <input type="text" id="partner" name="Имя пары" placeholder="Если будете с парой">
+  </div>
+  <button type="submit" class="submit-btn">Отправить ответ</button>
     </form>
     <div class="thanks" id="thanks">
       <div class="display" style="font-size:1.6rem; color:var(--ochre);">Спасибо!</div>
