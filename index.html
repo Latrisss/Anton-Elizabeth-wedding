@@ -484,45 +484,49 @@
   </div>
 </section>
 
-<section class="rsvp reveal">
-  <div class="wrap">
-    <div class="eyebrow">Анкета гостя</div>
-    <h2>Будете с нами?</h2>
-    <form id="rsvpForm" method="POST">
-      <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88>
-      <div>
-        <label for="fullname">Имя и фамилия</label>
-        <input type="text" id="fullname" placeholder="Иван Иванов" required>
+<section class="rsvp reveal" style="padding: 5.5rem 1.5rem; background: var(--deep-cream); color: var(--ink);">
+  <div class="wrap" style="max-width: 600px; margin: 0 auto; font-size: 1.15rem; line-height: 1.6;">
+    <div class="eyebrow" style="text-align: center; margin-bottom: 0.5rem;">Анкета гостя</div>
+    <h2 style="text-align: center; font-size: 2.4rem; font-family: 'Cormorant Garamond', serif; margin-bottom: 1.5rem;">Будете с нами?</h2>
+    
+    <form id="rsvpForm" method="POST" style="display: flex; flex-direction: column; gap: 1.8rem;">
+      <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
+      <input type="hidden" name="subject" value="Новый ответ на приглашение">
+
+      <!-- Поле: Имя гостя -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label for="fullname" style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.8;">Имя и фамилия</label>
+        <input type="text" id="fullname" name="name" placeholder="Иван Ivanov" required style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.5); border: 1px solid rgba(58,54,46,0.2); border-radius: 4px; font-size: 1.1rem; outline: none;">
       </div>
 
-      <div>
-        <label>Будете ли вы на свадьбе</label>
-        <div class="radio-group">
-          <label class="radio-opt" id="opt-yes">
-            <input type="radio" name="attend" value="yes">
-            Да, с удовольствием
+      <!-- Поле: Присутствие -->
+      <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+        <label style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.8;">Будете ли вы на свадьбе?</label>
+        <div style="display: flex; flex-direction: column; gap: 0.8rem; margin-top: 0.3rem;">
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 0.6rem; font-size: 1.1rem;">
+            <input type="radio" name="attendance" value="Да, с удовольствием" checked style="transform: scale(1.2);"> Да, с удовольствием
           </label>
-          <label class="radio-opt" id="opt-no">
-            <input type="radio" name="attend" value="no">
-            Нет, не смогу
+          <label style="cursor: pointer; display: flex; align-items: center; gap: 0.6rem; font-size: 1.1rem;">
+            <input type="radio" name="attendance" value="Нет, не смогу" style="transform: scale(1.2);"> Нет, не смогу
           </label>
         </div>
       </div>
 
-      <div id="partner-field">
-        <label for="partner">Имя и фамилия пары</label>
-        <input type="text" id="partner" placeholder="Если будете с парой">
+      <!-- Кнопка отправки -->
+      <div style="text-align: center; margin-top: 1rem;">
+        <button type="submit" class="btn" style="font-size: 1rem; padding: 1rem 2.5rem; cursor: pointer;">Отправить ответ</button>
       </div>
-
-      <button type="submit" class="submit-btn">Отправить ответ</button>
     </form>
-    <div class="thanks" id="thanks">
-      <div class="display" style="font-size:1.6rem; color:var(--ochre);">Спасибо!</div>
-      <p style="margin-top:0.6rem; opacity:0.85;">Ваш ответ получен. До встречи 30 августа!</p>
+
+    <!-- Блок Спасибо (убедись, что id совпадает) -->
+    <div id="thanks" style="display: none; text-align: center; padding: 2rem 0;">
+      <h3 style="font-size: 2.2rem; font-family: 'Cormorant Garamond', serif; color: var(--cobalt-deep);">Спасибо!</h3>
+      <p style="font-size: 1.2rem; margin-top: 0.5rem;">Ваш ответ успешно сохранен.</p>
     </div>
+
   </div>
 </section>
-
+  
 <div class="tile-row" aria-hidden="true">
   <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 </div>
