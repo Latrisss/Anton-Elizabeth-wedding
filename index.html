@@ -595,6 +595,36 @@
     // чтобы ответы реально сохранялись — см. пояснение в чате.
   });
 </script>
+ <form action="https://web3forms.com" method="POST">
+        <!-- ТВОЙ КЛЮЧ ИЗ WEB3FORMS -->
+        <input type="hidden" name="access_key" value="СЮДА_ВСТАВЬ_КЛЮЧ">
+        <input type="hidden" name="subject" value="Новый ответ на приглашение (Свадьба)">
 
+        <div>
+          <label for="guest-name">Ваше имя и фамилия</label>
+          <input type="text" id="guest-name" name="name" placeholder="Иван Иванов" required>
+        </div>
+
+        <div style="margin-top: 1.5rem; text-align: left;">
+          <label>Сможете ли вы присутствовать?</label>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem;">
+            <label style="cursor: pointer;"><input type="radio" name="attendance" value="Приду" checked> Я приду с удовольствием</label>
+            <label style="cursor: pointer;"><input type="radio" name="attendance" value="Не приду"> К сожалению, не смогу</label>
+          </div>
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <label for="drinks">Пожелания по напиткам или аллергии</label>
+          <input type="text" id="drinks" name="message" placeholder="Вино сухое / Виски">
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="btn">Отправить ответ</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+  
 </body>
 </html>
