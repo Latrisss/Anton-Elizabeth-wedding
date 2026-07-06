@@ -378,26 +378,50 @@
     <div class="scroll-cue"></div>
   </section>
 
-  <!-- СЕКЦИЯ RSVP С ФОРМОЙ -->
+  <!-- РАЗДЕЛ RSVP С ФОРМОЙ -->
   <section class="rsvp">
     <div class="wrap">
       <div class="eyebrow">R.S.V.P</div>
       <h2>Подтвердите присутствие</h2>
       
       <form action="https://web3forms.com" method="POST">
-        <!-- ВАЖНО: Замените ПОДПИСЬ_НИЖЕ на ваш реальный ключ из Web3Forms Dashboard -->
-        <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
+        <!-- ВАЖНО: Вставьте ваш секретный ключ вместо текста ниже -->
+        <input type="hidden" name="access_key" value="СЮДА_ВСТАВЬТЕ_ВАШ_КЛЮЧ">
         <input type="hidden" name="subject" value="Новый ответ на приглашение (Свадьба)">
-        <input type="hidden" name="from_name" value="Свадебный Сайт">
 
         <!-- Поле: Имя гостя -->
-        <div class="form-group">
+        <div>
           <label for="guest-name">Ваше имя и фамилия</label>
-          <input type="text" id="guest-name" name="Имя гостя" placeholder="Иван Иванов" required>
+          <input type="text" id="guest-name" name="name" placeholder="Иван Иванов" required>
         </div>
 
         <!-- Поле: Присутствие -->
-        <div class="form-group">
-          <label>Сможете ли вы присутствовать?</label>
-          <div class="radio-group">
-            <label class="radio-option">
+        <div style="margin-top: 1.5rem; text-align: left;">
+          <label style="opacity: 0.7; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em;">Сможете ли вы присутствовать?</label>
+          <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-top: 0.5rem;">
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+              <input type="radio" name="attendance" value="Приду" checked> Я приду с удовольствием
+            </label>
+            <label style="cursor: pointer; display: flex; align-items: center; gap: 0.5rem;">
+              <input type="radio" name="attendance" value="Не приду"> К сожалению, не смогу
+            </label>
+          </div>
+        </div>
+
+        <!-- Поле: Напитки -->
+        <div style="margin-top: 1.5rem;">
+          <label for="drinks">Пожелания по напиткам или аллергии</label>
+          <input type="text" id="drinks" name="message" placeholder="Вино сухое / Виски / Аллергия на орехи">
+        </div>
+
+        <!-- Кнопка отправки -->
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="btn">Отправить ответ</button>
+        </div>
+      </form>
+
+    </div>
+  </section>
+
+</body>
+</html>
