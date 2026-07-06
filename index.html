@@ -71,7 +71,7 @@
  margin:0 auto;
  }
  .hero{
- min-height:85svh;
+ min-height:70svh;
  display:flex;
  flex-direction:column;
  align-items:center;
@@ -81,7 +81,7 @@
  radial-gradient(circle at 20% 20%, rgba(138,130,100,0.10), transparent 55%),
  radial-gradient(circle at 80% 75%, rgba(183,154,93,0.14), transparent 55%),
  var(--plaster);
- padding:3rem 2rem;
+ padding:1.5rem 2rem;
  }
  .hero .eyebrow{
  opacity:0;
@@ -164,14 +164,14 @@
  }
  .welcome{ text-align:center; }
  .welcome p{
- font-size:clamp(1.1rem, 1rem + 0.4vw, 1.35rem);
+ font-size:clamp(1.2rem, 1.05rem + 0.5vw, 1.5rem);
  line-height:1.7;
  color:var(--ink);
- max-width:650px;
+ max-width:680px;
  margin:1.5rem auto 0;
  }
  .welcome .display{
- font-size:clamp(1.7rem, 1.3rem + 1.6vw, 2.6rem);
+ font-size:clamp(1.9rem, 1.4rem + 2vw, 2.9rem);
  color:var(--cobalt-deep);
  font-weight: 400;
  line-height: 1.3;
@@ -183,7 +183,7 @@
  }
  .calendar .eyebrow{color:var(--terracotta); opacity:0.9;}
  .cal-box{
- max-width:420px;
+ max-width:520px;
  margin:2.5rem auto 0;
  background:rgba(58,54,46,0.04);
  border:1px solid rgba(58,54,46,0.15);
@@ -193,28 +193,28 @@
  .cal-head{
  background:var(--terracotta);
  color:var(--plaster);
- padding:1rem;
+ padding:1.2rem;
  text-transform:uppercase;
  letter-spacing:0.2em;
- font-size:clamp(0.9rem, 0.8rem + 0.4vw, 1.15rem);
+ font-size:clamp(1rem, 0.9rem + 0.4vw, 1.3rem);
  font-weight: 500;
  }
  .cal-grid{
  display:grid;
  grid-template-columns:repeat(7,1fr);
- gap:10px;
- padding:1.5rem;
+ gap:12px;
+ padding:2rem;
  }
  .cal-grid .dow{
- font-size:clamp(0.7rem, 0.65rem + 0.2vw, 0.9rem);
+ font-size:clamp(0.8rem, 0.7rem + 0.25vw, 1rem);
  opacity:0.7;
  text-transform:uppercase;
  font-weight: 500;
  }
  .cal-grid .day{
  font-family:'Playfair Display', serif;
- font-size:clamp(1.05rem, 0.95rem + 0.4vw, 1.4rem);
- padding:0.5rem 0;
+ font-size:clamp(1.2rem, 1.05rem + 0.5vw, 1.6rem);
+ padding:0.65rem 0;
  position:relative;
  display:flex;
  align-items:center;
@@ -226,9 +226,9 @@
  }
  .cal-grid .day.marked .heart-icon{
  position:absolute;
- font-size:2.8rem;
+ font-size:clamp(3.2rem, 2.8rem + 1vw, 4.2rem);
  color:transparent;
- -webkit-text-stroke:1.5px var(--ochre);
+ -webkit-text-stroke:1.6px var(--ochre);
  opacity:0.95;
  pointer-events: none;
  z-index: 1;
@@ -263,8 +263,8 @@
  border:1px solid rgba(138,130,100,0.2);
  border-radius:6px;
  }
- .venue-card h3{ font-size:clamp(1.9rem, 1.5rem + 1.6vw, 2.9rem); color:var(--terracotta); margin-bottom: 0.5rem; }
- .venue-card p{ font-size: clamp(1rem, 0.9rem + 0.4vw, 1.3rem); margin:0.5rem 0 1.8rem; opacity:0.85; }
+ .venue-card h3{ font-size:clamp(2.2rem, 1.7rem + 2vw, 3.4rem); color:var(--terracotta); margin-bottom: 0.5rem; }
+ .venue-card p{ font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem); margin:0.5rem 0 1.8rem; opacity:0.85; }
  .btn, .submit-btn{
  display:inline-block;
  padding:1.1rem 2.6rem;
@@ -283,18 +283,18 @@
  }
  .btn:hover{ background:#A5895A; transform:translateY(-2px); }
  .timeline{ text-align:center; }
- .timeline h2{ font-size: clamp(1.8rem, 1.5rem + 1.2vw, 2.6rem); color: var(--cobalt-deep); }
+ .timeline h2{ font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem); color: var(--cobalt-deep); }
  .timeline-note{
  margin-top:2rem;
  padding:2rem;
  border:1px dashed rgba(107,123,79,0.5);
  color:var(--olive);
  font-style:italic;
- font-size: clamp(1rem, 0.9rem + 0.3vw, 1.3rem);
+ font-size: clamp(1.1rem, 1rem + 0.4vw, 1.45rem);
  border-radius:6px;
  }
  .dress{ text-align:center; }
- .dress h2{ font-size: clamp(1.8rem, 1.5rem + 1.2vw, 2.6rem); }
+ .dress h2{ font-size: clamp(2rem, 1.6rem + 1.6vw, 3rem); }
  .palette{
  display:flex;
  justify-content:center;
@@ -492,11 +492,11 @@
  <form id="rsvpForm" method="POST">
    <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
    <input type="hidden" name="subject" value="Новый ответ на приглашение">
-   <input type="hidden" id="attendance-status" name="Присутствие" value="Да, с удовольствием">
+   <input type="hidden" id="attendance-status" name="Attendance" value="Да, с удовольствием">
 
    <div>
      <label for="fullname">Имя и фамилия</label>
-     <input type="text" id="fullname" name="Имя гостя" placeholder="Иван Иванов" required>
+     <input type="text" id="fullname" name="Guest_Name" placeholder="Иван Иванов" required>
    </div>
    <div>
      <label>Будете ли вы на свадьбе</label>
@@ -511,7 +511,7 @@
    </div>
    <div id="partner-field" class="open">
      <label for="partner">Имя и фамилия пары</label>
-     <input type="text" id="partner" name="Имя пары" placeholder="Если будете с парой">
+     <input type="text" id="partner" name="Partner_Name" placeholder="Если будете с парой">
    </div>
    <button type="submit" class="submit-btn">Отправить ответ</button>
  </form>
