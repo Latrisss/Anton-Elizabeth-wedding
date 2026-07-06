@@ -60,7 +60,6 @@
  .tile-row span:nth-child(4n+2){background:var(--ochre);}
  .tile-row span:nth-child(4n+3){background:var(--terracotta);}
  .tile-row span:nth-child(4n+4){background:var(--olive);}
- 
  section{
  padding:4rem 2rem;
  position:relative;
@@ -152,7 +151,6 @@
  80%{top:34px; opacity:0;}
  100%{top:34px; opacity:0;}
  }
- 
  .reveal{
  opacity:0;
  transform:translateY(24px);
@@ -162,7 +160,6 @@
  opacity:1;
  transform:translateY(0);
  }
- 
  .welcome{ text-align:center; }
  .welcome p{
  font-size:1.4rem;
@@ -177,7 +174,6 @@
  font-weight: 400;
  line-height: 1.3;
  }
- 
  .calendar{
  background:var(--deep-cream);
  color:var(--ink);
@@ -263,7 +259,6 @@
  opacity:0.8;
  margin-top: 0.3rem;
  }
- 
  .venue{ text-align:center; }
  .venue-card{
  margin-top:2rem;
@@ -274,7 +269,6 @@
  }
  .venue-card h3{ font-size:2.8rem; color:var(--terracotta); margin-bottom: 0.5rem; }
  .venue-card p{ font-size: 1.3rem; margin:0.5rem 0 1.8rem; opacity:0.85; }
- 
  .btn, .submit-btn{
  display:inline-block;
  padding:1.2rem 3rem;
@@ -292,7 +286,6 @@
  font-family: 'Jost', sans-serif;
  }
  .btn:hover{ background:#A5895A; transform:translateY(-2px); }
- 
  .timeline{ text-align:center; }
  .timeline h2{ font-size: 2.4rem; color: var(--cobalt-deep); }
  .timeline-note{
@@ -304,7 +297,6 @@
  font-size: 1.3rem;
  border-radius:6px;
  }
- 
  .dress{ text-align:center; }
  .dress h2{ font-size: 2.4rem; }
  .palette{
@@ -321,7 +313,6 @@
  transition:transform 0.3s ease;
  }
  .swatch:hover{ transform:scale(1.12); }
- 
  .rsvp{
  background:var(--deep-cream);
  color:var(--ink);
@@ -361,7 +352,6 @@
  }
  input[type=text]:focus{ border-color:var(--terracotta); }
  input[type=text]::placeholder{ color:rgba(58,54,46,0.35); }
- 
  .radio-group{ display:flex; gap:1.5rem; flex-wrap:wrap; }
  .radio-opt{
  flex:1;
@@ -403,7 +393,6 @@
  width: 100%;
  }
  .submit-btn:hover{ background:#8F7658; }
- 
  .thanks{
  display:none;
  text-align:center;
@@ -415,7 +404,6 @@
  }
  .thanks.show{ display:block; animation:fadeUp 0.6s ease; }
  .thanks p { font-size: 1.3rem; margin-top: 0.5rem; }
- 
  footer{
  text-align:center;
  padding:3rem 2rem;
@@ -445,196 +433,6 @@
 <div class="tile-row" aria-hidden="true">
 <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
 </div>
-p class="display">Самые важные моменты жизни хочется разделить с самыми близкими людьми.</p>
- <p>30 августа мы с Лизой станем семьёй — и будем невероятно счастливы, если этот день вы проведёте рядом с нами. Ваше присутствие для нас значит больше, чем любой подарок.</p>
- </div>
-</section>
 
-<section class="calendar reveal">
+<section class="welcome reveal">
  <div class="wrap">
- <div class="eyebrow">Сохраните дату</div>
- <div class="cal-box">
- <div class="cal-head">Август 2026</div>
- <div class="cal-grid" id="calGrid"></div>
- </div>
- <div class="countdown" id="countdown">
- <div><div class="num" id="cd-days">--</div><div class="lbl">дней</div></div>
- <div><div class="num" id="cd-hours">--</div><div class="lbl">часов</div></div>
- <div><div class="num" id="cd-min">--</div><div class="lbl">минут</div></div>
- <div><div class="num" id="cd-sec">--</div><div class="lbl">секунд</div></div>
- </div>
- </div>
-</section>
-
-<section class="venue reveal">
- <div class="wrap">
- <div class="eyebrow">Место проведения</div>
- <div class="venue-card">
- <h3>Palermo</h3>
- <p>Точный адрес и детали проезда — по ссылке ниже</p>
- <a class="btn" href="https://2gis.ru" target="_blank" rel="noopener">Открыть карту →</a>
- </div>
- </div>
-</section>
-
-<section class="timeline reveal">
- <div class="wrap">
- <div class="eyebrow">План дня</div>
- <h2>Расписание</h2>
- <div class="timeline-note">Расписание дня уточняется — появится здесь ближе к дате</div>
- </div>
-</section>
-
-<section class="dress reveal">
- <div class="wrap">
- <div class="eyebrow">Дресс-код</div>
- <h2 style="margin-top:0.6rem; color:var(--cobalt-deep);">Комфорт превыше всего</h2>
- <p style="margin-top:0.8rem; opacity:0.75; max-width:560px; margin-left:auto; margin-right:auto;">Наденьте то, в чём чувствуете себя свободно. Если хочется ориентир — вот палитра дня:</p>
- <div class="palette">
- <div class="swatch" style="background:#FBF8F2; border:1px solid #ddd;"></div>
- <div class="swatch" style="background:#B79A5D;"></div>
- <div class="swatch" style="background:#8C9A7B;"></div>
- <div class="swatch" style="background:#A98F72;"></div>
- <div class="swatch" style="background:#4A4636;"></div>
- </div>
- </div>
-</section>
-
-<section class="rsvp reveal">
- <div class="wrap">
- <div class="eyebrow">Анкета гостя</div>
- <h2>Будете с нами?</h2>
- <form id="rsvpForm" method="POST">
-   <input type="hidden" name="access_key" value="c2987618-c193-49f0-9ce9-188471ea3c88">
-   <input type="hidden" name="subject" value="Новый ответ на приглашение">
-   <input type="hidden" id="attendance-status" name="Присутствие" value="Да, с удовольствием">
-
-   <div>
-     <label for="fullname">Имя и фамилия</label>
-     <input type="text" id="fullname" name="Имя гостя" placeholder="Иван Иванов" required>
-   </div>
-   <div>
-     <label>Будете ли вы на свадьбе</label>
-     <div class="radio-group">
-       <div class="radio-opt selected" id="opt-yes">
-         Да, с удовольствием
-       </div>
-       <div class="radio-opt" id="opt-no">
-         Нет, не смогу
-       </div>
-     </div>
-   </div>
-   <div id="partner-field">
-     <label for="partner">Имя и фамилия пары</label>
-     <input type="text" id="partner" name="Имя пары" placeholder="Если будете с парой">
-   </div>
-   <button type="submit" class="submit-btn">Отправить ответ</button>
- </form>
- <div class="thanks" id="thanks">
-   <div class="display" style="font-size:2rem; color:var(--ochre);">Спасибо!</div>
-   <p>Ваш ответ успешно получен. До встречи 30 августа!</p>
- </div>
- </div>
-</section>
- 
-<div class="tile-row" aria-hidden="true">
-<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
-</div>
-<footer>Антон &amp; Елизавета · 30.08.2026</footer>
-
-<script>
- // Reveal on scroll
- const reveals = document.querySelectorAll('.reveal');
- const io = new IntersectionObserver((entries)=>{
- entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('in'); });
- }, {threshold:0.15});
- reveals.forEach(el=>io.observe(el));
- 
- // Сетка календаря
- const dow = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
- const grid = document.getElementById('calGrid');
- dow.forEach(d=>{
- const el = document.createElement('div');
- el.className = 'dow'; el.textContent = d;
- grid.appendChild(el);
- });
- const firstWeekday = 5; 
- for(let i=0;i<firstWeekday;i++){
- const blank = document.createElement('div');
- grid.appendChild(blank);
- }
- for(let day=1; day<=31; day++){
- const el = document.createElement('div');
- el.className = 'day' + (day===30 ? ' marked' : '');
- el.textContent = day;
- grid.appendChild(el);
- }
-
- // Обратный отсчёт
- const target = new Date('2026-08-30T14:00:00');
- function tick(){
- const now = new Date();
- let diff = target - now;
- if(diff < 0) diff = 0;
- const d = Math.floor(diff / (1000 * 60 * 60 * 24));
- const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
- const m = Math.floor((diff / (1000 * 60)) % 60);
- const s = Math.floor((diff / 1000) % 60);
- document.getElementById('cd-days').textContent = d;
- document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
- document.getElementById('cd-min').textContent = String(m).padStart(2,'0');
- document.getElementById('cd-sec').textContent = String(s).padStart(2,'0');
- }
- tick(); setInterval(tick, 1000);
- 
- // RSVP клики по кастомным плашкам
- const optYes = document.getElementById('opt-yes');
- const optNo = document.getElementById('opt-no');
- const partnerField = document.getElementById('partner-field');
- const attendanceStatus = document.getElementById('attendance-status');
- [optYes, optNo].forEach(opt=>{
- opt.addEventListener('click', ()=>{
- optYes.classList.remove('selected');
- optNo.classList.remove('selected');
- opt.classList.add('selected');
- if(opt === optYes){ 
- partnerField.classList.add('open');
- attendanceStatus.value = "Да, с удовольствием";
- } else { 
- partnerField.classList.remove('open');
- attendanceStatus.value = "Нет, не смогу";
- }
- });
- });
-
- // Отправка JSON данных на шлюз Web3Forms
- document.getElementById('rsvpForm').addEventListener('submit', function(e){
- e.preventDefault();
- 
- const formData = new FormData(this);
- const object = Object.fromEntries(formData);
- const json = JSON.stringify(object);
- 
- fetch('https://web3forms.com', {
- method: 'POST',
- headers: {
-   'Content-Type': 'application/json',
-   'Accept': 'application/json'
- },
- body: json
- })
- .then(response => {
- if (response.ok) {
- this.style.display = 'none';
- document.getElementById('thanks').classList.add('show');
- } else {
- alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
- }
- })
- .catch(error => {
- alert('Ошибка соединения. Пожалуйста, попробуйте отправить ответ позже.');
- });
- });
-</script>
-</body>
-</html>
