@@ -227,13 +227,16 @@
  }
  .cal-grid .day.marked .heart-icon{
  position:absolute;
- font-size:clamp(3.2rem, 2.8rem + 1vw, 4.2rem);
+ top:50%; left:50%;
+ transform:translate(-50%,-50%);
+ font-size:min(3.4rem, 11vw);
  color:transparent;
  -webkit-text-stroke:1.6px var(--ochre);
  opacity:0.95;
  pointer-events: none;
  z-index: 1;
- }
+ white-space:nowrap;
+}
  .countdown{
  margin-top:2.8rem;
  display:flex;
@@ -268,7 +271,7 @@
  .venue-card p{ font-size: clamp(1.1rem, 1rem + 0.5vw, 1.45rem); margin:0.5rem 0 1.8rem; opacity:0.85; }
  .btn, .submit-btn{
  display:inline-block;
- padding:1.1rem 2.6rem;
+ padding:1.1rem clamp(1.2rem, 4vw, 2.6rem);
  background:var(--ochre);
  color:var(--ink);
  text-decoration:none;
@@ -352,7 +355,7 @@
  .radio-group{ display:flex; gap:1.5rem; flex-wrap:wrap; }
  .radio-opt{
  flex:1;
- min-width:180px;
+ min-width:min(180px, 45%);
  padding:1.2rem 1rem;
  border:1px solid rgba(58,54,46,0.3);
  border-radius:6px;
