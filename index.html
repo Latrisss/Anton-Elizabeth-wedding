@@ -202,7 +202,7 @@
  }
  .cal-grid{
  display:grid;
- grid-template-columns:repeat(7,1fr);
+ grid-template-columns:repeat(7,minmax(0,1fr));
  gap:12px;
  padding:2rem;
  }
@@ -354,20 +354,19 @@
  input[type=text]::placeholder{ color:rgba(58,54,46,0.35); }
  .radio-group{ display:flex; gap:1.5rem; flex-wrap:wrap; }
  .radio-opt{
- flex:1;
- min-width:min(180px, 45%);
+ flex:1 1 0;
+ min-width:0;
  padding:1.2rem 1rem;
- overflow-wrap:anywhere;
- word-break:break-word;
  border:1px solid rgba(58,54,46,0.3);
  border-radius:6px;
  cursor:pointer;
  text-align:center;
  transition:all 0.25s ease;
- font-size:clamp(0.95rem, 0.9rem + 0.25vw, 1.15rem);
+ font-size:clamp(0.9rem, 0.85rem + 0.2vw, 1.1rem);
  font-weight: 400;
  background: rgba(255,255,255,0.15);
- }
+ line-height:1.4;
+}
  .radio-opt input{ display:none; }
  .radio-opt.selected{
  background:var(--ochre);
